@@ -13,8 +13,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                            <menu-container :items="{{ json_encode($categories) }}"></menu-container>
 
-                    You are logged in!
                 </div>
             </div>
         </div>
