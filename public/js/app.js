@@ -50182,6 +50182,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   methods: {
     handleSubmit: function handleSubmit() {
       console.log('form data', this.food);
+      var postData = this.food;
+      postData.restoId = this.restoId;
+      window.axios.post('api/item/save', postData).then(function (response) {
+        console.log('response', response.data);
+      }).catch(function (error) {
+        return console.log('error', error.response);
+      });
     }
   }
 });
