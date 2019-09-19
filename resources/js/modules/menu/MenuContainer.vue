@@ -12,8 +12,6 @@
    ></multiselect>
     </div>
 
-<hr>
-
 <h2 class="text-danger">Items</h2>
     <menu-group :items="currentMenuItems"></menu-group>
 
@@ -26,7 +24,7 @@
         Add Menu Item
       </template>
 <template slot="body">
-  Form will Come Here
+  <menu-add-form :categories="categories"></menu-add-form>
 </template>
     </card-component>
 
@@ -40,10 +38,12 @@
 import _ from 'lodash';
  import Multiselect from 'vue-multiselect';
  import MenuGroup from './MenuGroups.vue';
+import MenuAddForm from './MenuAddForm.vue';
+
 
 export default {
   props: ['items'],
-  components: { Multiselect, MenuGroup },
+  components: { Multiselect, MenuGroup, MenuAddForm },
   created(){
     _.forEach(this.items, (item, key)=>{
       this.categories.push(key)
